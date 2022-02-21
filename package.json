@@ -5,13 +5,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "node-red"
+  ],
   "node-red": {
     "nodes": {
       "zoom-session": "zoom-session.js"
     }
   },
-  "keywords": [],
-  "author": "",
+  "author": "Eugene Zaidun",
   "license": "ISC",
   "dependencies": {
     "jsrsasign": "10.5.7"
