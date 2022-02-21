@@ -1,0 +1,61 @@
+<script type="text/html" data-template-name="zoom-session-config">
+  <div class="form-row">
+    <label for="node-config-input-sdkKey">SDK key</label>
+    <input type="text" id="node-config-input-sdkKey" placeholder="" />
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-sdkSecret">SDK secret</label>
+    <input type="password" id="node-config-input-sdkSecret" placeholder="" />
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-name">Name</label>
+    <input type="text" id="node-config-input-name" placeholder="" />
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-password">Password</label>
+    <input type="text" id="node-config-input-password" placeholder="" />
+  </div>
+</script>
+
+<script type="text/html" data-template-name="zoom-session">
+  <div class="form-row">
+    <label for="node-input-name">Name</label>
+    <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-zoomSessionConfig"
+      ><i class="fa fa-tag"> Credentials</i></label
+    >
+    <input type="text" id="node-input-zoomSessionConfig" />
+  </div>
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType("zoom-session", {
+    category: "function",
+    color: "#a6bbcf",
+    defaults: {
+      zoomSessionConfig: { value: "", type: "zoom-session-config" },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "zoom-session";
+    },
+  });
+</script>
+
+<script type="text/javascript">
+  RED.nodes.registerType("zoom-session-config", {
+    category: "config",
+    defaults: {
+      sdkKey: { value: "", required: true },
+      sdkSecret: { value: "", required: true },
+      name: { value: "", required: false },
+      password: { value: "", required: false },
+    },
+    label: function () {
+      return this.name || "zoom-session-config";
+    },
+  });
+</script>
